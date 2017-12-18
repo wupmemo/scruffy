@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Canvas</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.1/vue.min.js"></script>
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.9/fabric.min.js">
+    </script>
+    </script>
+
+    <script type="text/javascript" src="./res/jscolor.min.js"></script>
+    <script type="text/javascript" src="./src/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./src/style.css">
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+<h1 class="text-center"> Live Canvas </h1>
+<h2 class="text-center"> Make stuff .. Enjoy :)</h2>
+</div>
+<div class="col-md-6">
+    <canvas id="main_canvas"></canvas>
+    <div>
+        <span class="pull-left"><span>X: </span><span id="mouseXcord"></span> -
+        <span>Y: </span><span id="mouseYcord"></span></span>
+        <span id="user-goodluck" class="pull-right hidden"> Hand drawing ... Good luck :)</span>
+    </div>
+</div>
+<div class="col-md-6">
+    <div id="control-div" class="text-center control-area">
+    <h1 class="text-center">Control Your Canvas</h1>
+        <h3>Play around : </h3>
+        <button id="addTxt" class="btn btn-primary" title="add text to the canvas">
+            <span class="glyphicon glyphicon-blackboard"></span>
+             Text
+        </button>
+        <!--<button id="addImg" class="btn btn-primary" title="add image to the canvas">
+            <span class="glyphicon glyphicon-picture"></span>
+             Image
+        </button>-->
+        <button id="drawShape" class="btn btn-primary" title="add new shape">
+            <span class="glyphicon glyphicon-pencil"></span> Draw</button>
+        <label class="btn btn-default btn-file btn-primary" title="upload images to the canvas">
+            <span class="glyphicon glyphicon-cloud-upload"></span> Add Image <input id="uploadImg" type="file">
+        </label>
+        <button id="changeBg" class=" btn btn-primary jscolor {valueElement:null,value:'ffffff'}" title="changing canvas background color">Change Background</button>
+        <hr />
+        <div class="text-center">
+            <h3> Control stuff : </h3>
+            <button id="undoBtn" class="btn btn-primary" title="move backward in history" onclick="undo()"><span class="glyphicon glyphicon-arrow-left"></span> Undo</button>
+            <button id="redoBtn" class="btn btn-primary" title="move forward in history" onclick="redo()"><span class="glyphicon glyphicon-arrow-right"></span> Redo</button>
+            <button id="deleteElement" class="btn btn-danger" title="delete element on canvas"><span class="glyphicon glyphicon-remove"></span> Delete</button>
+            <button id="clearCanvas" class="btn btn-danger" title="Clear all elements on the canvas"><span class="glyphicon glyphicon-fire"></span> Clear</button>
+        </div>
+        <hr />
+        <div id="font-options" class="text-center hidden">
+            <h4><strong><u>Text & Fonts</u></strong></h4>
+            <div class="formGroup">
+                <select id="fntFamily">
+                    <option value="default">Times New Roman</option>
+                    <option value="sans">Comic Sans MS</option>
+                    <option value="helvetica">Helvetica</option>
+                    <option value="courierNew">Courier New</option>
+                    <option value="verdana">Verdana</option>
+                    <option value="georgia">Georgia</option>
+                    <option value="palatino">Palatino</option>
+                </select>
+                <select id="fntSize">
+                    <option value="default">20</option>
+                    <option value="sans">21</option>
+                    <option value="helvetica">22</option>
+                    <option value="courierNew">23</option>
+                    <option value="verdana">24</option>
+                    <option value="georgia">25</option>
+                    <option value="palatino">26</option>
+                </select>
+            </div>
+            <br />
+            <div class="formGroup">
+                <label class="checkbox-inline inprogress"><input disabled id="fntBold" type="checkbox" value="bold"><strong>Bold</strong></label>
+                <label class="checkbox-inline inprogress"><input disabled id="fntUnderline" type="checkbox" value="underline"><u>Underline</u></label>
+            </div>
+            <br />
+            <div class="forGroup">
+                <button id="editText" class="btn btn-primary" title="you can also double click text to change it">
+                    <span class="glyphicon glyphicon-pencil"></span> Edit Text</button></button>
+                <button id="txtColor" class=" btn btn-primary jscolor {valueElement:'valueSpan',styleElement:'styleSpan',value:'ff6699'}" title="changing selected text color"><span class="glyphicon glyphicon-text-color"></span>Text Color</button>
+            </div>
+        </div>
+        <hr />
+        <h3>Share with friends</h3>
+        <button id="share" class="btn btn-info"><span class="glyphicon glyphicon-share-alt" title="share canvas contents"></span> share</button>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "live-canvas",
+  "version": "1.0.0",
+  "description": "simple live and interactive canvas to draw on and play around.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@apecave.redapesolutions.com:Mohammed/live-canvas.git"
+  },
+  "author": "Mohammed Foaud <mohammed.fouad90@gmail.com>",
+  "license": "ISC",
+  "dependencies": {}
+}

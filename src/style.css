@@ -1,0 +1,17 @@
+/* Simple StyleSheet for Live Canvas APP */
+#main_canvas {
+    border:1px solid #ccc;
+    width: 100%;
+    height: 100%;
+}
+
+.control-area {
+    border:1px solid #000;
+    background-color: #ccc;
+    width:500px;
+    height:600px
+}
+
+#uploadImg {
+  display: none !important;
+}
