@@ -6,4 +6,4 @@ scruffy is a simple drawing app .. express your ideas and share it on social med
 - `cd` into project folder
 - run `npm install`
 - run `npm run dev` to run the local http-server
-- view the project in browser [Localhost Development server](http://localhost:3000)
+- view the project in browser [Localhost Development server](http://127.0.0.1:8080)
